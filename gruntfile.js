@@ -11,19 +11,15 @@ module.exports = function (grunt) {
         }
       }
     },
-    traceur: {
+    coffee: {
       options: {
-        experimental: true
+        sourceMap: true
       },
-      custom: {
-        files: [{
-          expand: true,
-          src: ["app/src/*.js"],
-          dest: "app/dist/",
-          ext: ".js",
-          flatten: true
-        }]
-      }
+      compile: {
+        files: {
+          "app/dist/mySpec.js" : "app/src/mySpec.coffee"
+        } 
+      },
     },
     watch: {
       all: {
@@ -39,7 +35,8 @@ module.exports = function (grunt) {
     },
     open: {
       all: {
-        path: "http://localhost:9000/index.html"
+        //path: "http://localhost:9000/index.html"
+        path: "http://localhost:9000/index.coffee.html"
       }
     }
   });
@@ -47,5 +44,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-express");
   grunt.loadNpmTasks("grunt-open");
-  grunt.registerTask("default", ["express", "open", "watch"]);
+  grunt.loadNpmTasks("grunt-contrib-coffee");
+  grunt.registerTask("default", ["coffee", "express", "open", "watch"]);
 };
