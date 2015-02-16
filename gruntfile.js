@@ -25,12 +25,17 @@ module.exports = function (grunt) {
       all: {
         files: "app/**/*.*",
         options: {
+          reload: true,
           livereload: true
         }
       },
       js: {
-        files: "app/es6/*.js",
-        tasks: [""]
+        files: ["app/js/*.js"],
+        tasks: []
+      },
+      coffee: {
+        files: ["app/src/*.coffee"],
+        tasks: ["coffee"]
       }
     },
     open: {
