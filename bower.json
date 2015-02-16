@@ -1,0 +1,21 @@
+{
+  "name": "jasmmine_base",
+  "version": "0.0.1",
+  "authors": [
+    "altescape <hello@michaelwatts.me>"
+  ],
+  "description": "A Jasmine test boostrap",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "jasmine": "~2.2.0"
+  }
+}
